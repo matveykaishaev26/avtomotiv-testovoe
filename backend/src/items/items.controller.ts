@@ -1,0 +1,13 @@
+import { Controller, Get } from '@nestjs/common';
+import { ItemsService } from './items.service';
+import { PaginationDto } from './dto/pagination.dto';
+import { Query } from '@nestjs/common';
+@Controller('items')
+export class ItemsController {
+  constructor(private readonly itemsService: ItemsService) {}
+
+  @Get()
+  findAll(@Query() query: PaginationDto) {
+    return this.itemsService.get(query.limit, query.offset);
+  }
+}
