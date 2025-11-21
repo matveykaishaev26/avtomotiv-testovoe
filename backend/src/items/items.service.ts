@@ -11,7 +11,7 @@ export class ItemsService {
     private readonly database: NodePgDatabase<typeof schema>,
   ) {}
 
-  async get(limit?: number, offset?: number) {
+  async get(limit: number, offset: number) {
     return this.database.query.itemsTable.findMany({
       limit,
       offset,

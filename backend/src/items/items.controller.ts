@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ItemsService } from './items.service';
 import { PaginationDto } from './dto/pagination.dto';
 import { Query } from '@nestjs/common';
@@ -12,7 +12,7 @@ export class ItemsController {
     return this.itemsService.get(query.limit, query.offset);
   }
   @Post()
-  create(@Query() query: CreateItemDto[]) {
+  create(@Body() query: CreateItemDto[]) {
     return this.itemsService.create(query);
   }
 }
