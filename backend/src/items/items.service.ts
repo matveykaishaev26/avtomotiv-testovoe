@@ -18,7 +18,7 @@ export class ItemsService {
     });
   }
   async create(items: { name: string }[]) {
-    return this.database.insert(schema.itemsTable).values({ ...items });
+    return this.database.insert(schema.itemsTable).values(items);
   }
   async getCount() {
     return await this.database
