@@ -6,7 +6,7 @@ front:
 back:
     http://localhost:3000
 оптимизация:
-    1. индексы
+    1. индексы для таблицы items
     2. connection pool - 10 соединений
     3. cursor based pagination
     4. кэширование GET /items в Redis на 60 сек (кешировал самый популярный запрос при limit=20 и cursor=0)
