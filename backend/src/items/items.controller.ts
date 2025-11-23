@@ -9,7 +9,7 @@ export class ItemsController {
 
   @Get()
   findAll(@Query() query: PaginationDto) {
-    return this.itemsService.get(query.limit, query.offset);
+    return this.itemsService.get(query.limit, query.cursor);
   }
   @Post()
   create(@Body() query: CreateItemDto[]) {
