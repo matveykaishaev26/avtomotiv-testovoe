@@ -15,6 +15,13 @@
       "when": 1763643061195,
       "tag": "0001_woozy_eternals",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1763898509903,
+      "tag": "0002_icy_molly_hayes",
+      "breakpoints": true
     }
   ]
 }

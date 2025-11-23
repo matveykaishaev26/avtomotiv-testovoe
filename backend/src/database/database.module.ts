@@ -3,7 +3,8 @@ import { drizzle } from 'drizzle-orm/node-postgres';
 import { Pool } from 'pg';
 import * as itemsSchema from '../items/schema';
 import { DATABASE_CONNECTION } from './database-connection';
-
+import { redisProvider } from './redis.provide';
+import { REDIS_CONNECTION } from './redis-connection';
 @Module({
   providers: [
     {
@@ -23,7 +24,8 @@ import { DATABASE_CONNECTION } from './database-connection';
       },
       // inject: [ConfigService],
     },
+    redisProvider,
   ],
-  exports: [DATABASE_CONNECTION],
+  exports: [DATABASE_CONNECTION, REDIS_CONNECTION],
 })
 export class DatabaseModule {}
