@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { DATABASE_CONNECTION } from 'src/database/database-connection';
 import { NodePgDatabase } from 'drizzle-orm/node-postgres';
 import * as schema from './schema';
-import { count } from 'drizzle-orm';
+import { asc, count } from 'drizzle-orm';
 
 @Injectable()
 export class ItemsService {
@@ -15,6 +15,7 @@ export class ItemsService {
     return this.database.query.itemsTable.findMany({
       limit,
       offset,
+      orderBy: (item) => asc(item.id),
     });
   }
   async create(items: { name: string }[]) {
