@@ -25,7 +25,11 @@ services:
       - db
     ports:
       - "3000:3000"
-
+  frontend:
+    build: "./frontend"
+    ports:
+      - "5173:5173"
+    restart: always
 volumes:
   db-data:
 # docker compose build --no-cache
